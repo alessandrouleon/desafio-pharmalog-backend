@@ -34,7 +34,7 @@ export class User {
     }
 
     static deleteUser(props: User) {
-        const user = new User({ ...props, deletedAt: new Date() });
+        const user: User = { ...props, deletedAt: new Date() };
         return user;
     }
 
