@@ -57,7 +57,7 @@ export class UserRepository implements IUserRepository {
                 .limit(take)
                 .skip((page - 1) * take)
                 .sort({ createdAt: -1 })
-                .select('id name username email password createdAt updatedAt deletedAt'),
+                .select('id name username email password isAdmin createdAt updatedAt deletedAt'),
             userSchema.countDocuments(query),
         ]);
 
@@ -72,7 +72,7 @@ export class UserRepository implements IUserRepository {
                 .limit(take)
                 .skip((page - 1) * take)
                 .sort({ createdAt: -1 })
-                .select('id name username email password createdAt updatedAt deletedAt'),
+                .select('id name username email password isAdmin createdAt updatedAt deletedAt'),
             userSchema.countDocuments(query),
         ]);
 
