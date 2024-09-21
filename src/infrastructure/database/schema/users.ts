@@ -25,6 +25,10 @@ const schema = new Schema<UserModel>({
         type: String,
         required: true,
     },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+    },
     createdAt: {
         type: Date,
         default: Date.now,

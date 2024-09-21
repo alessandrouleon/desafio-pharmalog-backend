@@ -6,6 +6,7 @@ export class User {
     username: string;
     email: string;
     password: string;
+    isAdmin: boolean;
     createdAt?: Date;
     updatedAt?: Date | null;
     deletedAt?: Date | null;
@@ -16,6 +17,7 @@ export class User {
         this.username = props.username;
         this.email = new Email(props.email).getValue();
         this.password = new Password(props.password).getValue();
+        this.isAdmin = props.isAdmin;
         this.createdAt = props.createdAt;
         this.updatedAt = props.updatedAt;
         this.deletedAt = props.deletedAt;

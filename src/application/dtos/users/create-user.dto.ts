@@ -1,4 +1,4 @@
-import { IsString, Matches } from 'class-validator';
+import { IsBoolean, IsString, Matches } from 'class-validator';
 import { UserMessageHelper } from 'src/utils/message.helps';
 
 export class CreateUserDto {
@@ -18,6 +18,9 @@ export class CreateUserDto {
     @IsString()
     @Matches(/\S/, { message: UserMessageHelper.EMPTY_EMAIL })
     email: string;
+
+    @IsBoolean()
+    isAdmin: boolean;
 
     // updatedAt?: Date;
     // deletedAt?: Date;

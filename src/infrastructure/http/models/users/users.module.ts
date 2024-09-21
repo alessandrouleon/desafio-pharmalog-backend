@@ -6,17 +6,7 @@ import { UserController } from '../../controllers/users.controller';
 
 @Module({
     controllers: [UserController],
-    exports: [
-        // LoginUserUseCase,
-        // {
-        //     provide: 'IUserRepository',
-        //     useClass: UserRepository,
-        // },
-        // {
-        //     provide: 'ICryptoPassword',
-        //     useClass: EncryptPassword,
-        // },
-    ],
+    exports: [],
     providers: [
         CreateUserUseCase,
         {
