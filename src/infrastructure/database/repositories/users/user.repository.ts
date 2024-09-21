@@ -1,3 +1,4 @@
+import { HttpException, HttpStatus } from '@nestjs/common';
 import mongoose from 'mongoose';
 import { CreateUserDto } from 'src/application/dtos/users/create-user.dto';
 import { PaginatedData } from 'src/utils/pagination';
@@ -23,7 +24,10 @@ export class UserRepository implements IUserRepository {
     public async findById(id: string): Promise<User | null> {
         // Verifica se o ID é um ObjectId válido, particular do mongose
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            throw new Error('ID inválido. Deve ter 24 caracteres no formato hexadecimal.');
+            throw new HttpException(
+                'ID inválido. Deve ter 24 caracteres no formato hexadecimal.',
+                HttpStatus.BAD_REQUEST,
+            );
         }
         const userId = await userSchema.findById(id).exec();
         return userId;

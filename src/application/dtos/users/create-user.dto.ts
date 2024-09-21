@@ -21,7 +21,4 @@ export class CreateUserDto {
 
     @IsBoolean()
     isAdmin: boolean;
-
-    // updatedAt?: Date;
-    // deletedAt?: Date;
 }
