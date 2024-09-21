@@ -1,6 +1,5 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-// import { AllExceptionsFilter } from './filters/all-exceptions.filter';
 import * as dotenv from "dotenv";
 import { MongoConnection } from './infrastructure/database/mongoose-connection';
 import { AppModule } from './infrastructure/http/app.module';
@@ -17,8 +16,6 @@ async function bootstrap() {
     allowedHeaders: '*',
     origin: '*',
   });
-
-  // app.useGlobalFilters(new AllExceptionsFilter());
 
   const startServer = async () => {
     try {

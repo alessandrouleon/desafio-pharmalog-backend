@@ -9,7 +9,6 @@ import { userSchema } from '../../schema/users';
 export class UserRepository implements IUserRepository {
 
     public async create(user: CreateUserDto): Promise<User> {
-        console.log("data::", user);
         return new userSchema(user).save();
     }
 

@@ -1,9 +1,5 @@
 FROM node:18
 
-# ARG DOCKER_PORT=4050
-# ENV PORT=${DOCKER_PORT}
-
-
 # Diretório de trabalho no container
 WORKDIR /usr/src/app
 
@@ -26,4 +22,3 @@ EXPOSE 4050
 # Comando para iniciar a aplicação
 CMD ["npm", "run", "start:dev"]
 
-# CMD ["node", "dist/main"]
