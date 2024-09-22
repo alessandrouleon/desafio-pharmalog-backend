@@ -2,14 +2,17 @@ import {
     Body,
     Controller,
     Delete,
+    Get,
     Param,
     Patch,
-    Post
+    Post,
+    Query
 } from '@nestjs/common';
 import { CreateProductDto } from 'src/application/dtos/products/create-product.dto';
 import { UpdateProductDto } from 'src/application/dtos/products/update-product.dto';
 import { CreateProductUseCase } from 'src/application/use-cases/products/create-product.use-case';
 import { DeleteProductUseCase } from 'src/application/use-cases/products/delete-product.use-case';
+import { GetProductUseCase } from 'src/application/use-cases/products/get-product.use-case';
 import { UpdateProductUseCase } from 'src/application/use-cases/products/update-product.use-case';
 
 @Controller('products')
@@ -17,8 +20,8 @@ export class ProductController {
     constructor(
         private readonly createProductUseCase: CreateProductUseCase,
         private readonly updateProductUseCase: UpdateProductUseCase,
-        private readonly deleteProductUseCase: DeleteProductUseCase
-        // private readonly getProductUseCase: GetUserUseCase,
+        private readonly deleteProductUseCase: DeleteProductUseCase,
+        private readonly getProductUseCase: GetProductUseCase,
     ) { }
 
     @Post()
@@ -36,12 +39,12 @@ export class ProductController {
         return this.deleteProductUseCase.execute(id);
     }
 
-    // @Get('search/:page')
-    // async findSearch(
-    //     @Param('page') page: number,
-    //     @Query('value') value: string,
-    // ) {
-    //     return this.getUserUseCase.getUsers(value, page);
-    // }
+    @Get('search/:page')
+    async findSearch(
+        @Param('page') page: number,
+        @Query('value') value: string,
+    ) {
+        return this.getProductUseCase.getProducts(value, page);
+    }
 
 }
