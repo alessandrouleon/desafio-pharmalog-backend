@@ -6,7 +6,7 @@ import { LoginUserUseCase } from 'src/application/use-cases/users/login-use.use-
 import { UpdateUserUseCase } from 'src/application/use-cases/users/update-user.use-case';
 import { EncryptPassword } from 'src/infrastructure/crypto/encrypt-password';
 import { UserRepository } from 'src/infrastructure/database/repositories/users/user.repository';
-import { UserController } from '../../controllers/users.controller';
+import { UserController } from '../../controllers/users/user.controller';
 
 @Module({
     controllers: [UserController],

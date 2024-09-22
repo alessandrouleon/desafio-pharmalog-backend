@@ -16,3 +16,18 @@ export const UserMessageHelper = {
     INVALID_EMAIL: 'Email inválido',
     INVALID_PASSWORD: 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial'
 };
+
+export const ProductionMessageHelper = {
+    ID_NOT_EXIST: 'Este produto não existe',
+    ID_NOT_EXIST_FOR_UPDATE: 'Este produto não existe para ser alterada',
+    ID_NOT_EXIST_FOR_DELETED: 'Este produto não existe para ser deletada',
+    EMPTY_NAME: 'Preencha campo nome',
+    EMPTY_DESCRIPTION: 'Preencha campo descrição do produto',
+    EMPTY_PRICE: 'Preencha campo preço do produto',
+    EMPTY_QUANTY_IN_STOCK: 'Preencha campo quantidade em estoque',
+    EMPTY_CATEGORY: 'Preencha campo categoria do produto',
+    EMPTY_CODE_PRODUCT: 'Preencha código do produto',
+
+    EXIST_NAME: 'Este nome ja está cadastradog',
+    EXIST_CODE: 'Este codigo já está cadastrado',
+};

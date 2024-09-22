@@ -4,7 +4,7 @@ import { CreateUserDto } from 'src/application/dtos/users/create-user.dto';
 import { PaginatedData } from 'src/utils/pagination';
 import { User } from '../../../../domain/entities/users/user.entity';
 import { IUserRepository, IUserReturnWithPagination } from '../../../../domain/repositories/users/user-repository.interface';
-import { userSchema } from '../../schema/users';
+import { userSchema } from '../../schema/user';
 
 export class UserRepository implements IUserRepository {
 
