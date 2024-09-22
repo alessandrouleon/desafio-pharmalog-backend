@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { CreateProductDto } from "src/application/dtos/products/create-product.dto";
 import { Product } from "src/domain/entities/products/product.entity";
 import { IProductRepository } from "src/domain/repositories/products/product-repository.interface";
-import { UserMessageHelper } from "src/utils/message.helps";
+import { ProductionMessageHelper } from "src/utils/message.helps";
 
 @Injectable()
 export class CreateProductUseCase {
@@ -17,7 +17,7 @@ export class CreateProductUseCase {
 
         if (existsProductCode) {
             throw new HttpException(
-                UserMessageHelper.EXIST_USERNAME,
+                ProductionMessageHelper.EXIST_CODE,
                 HttpStatus.BAD_REQUEST,
             );
         }

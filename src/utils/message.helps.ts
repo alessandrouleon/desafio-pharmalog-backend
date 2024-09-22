@@ -28,6 +28,6 @@ export const ProductionMessageHelper = {
     EMPTY_CATEGORY: 'Preencha campo categoria do produto',
     EMPTY_CODE_PRODUCT: 'Preencha código do produto',
 
-    EXIST_NAME: 'Este nome ja está cadastradog',
-    EXIST_CODE: 'Este codigo já está cadastrado',
+    EXIST_NAME: 'Este nome de produto ja está cadastradog',
+    EXIST_CODE: 'Este código de produto já está cadastrado',
 };
