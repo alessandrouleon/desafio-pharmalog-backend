@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { Module, OnModuleInit } from '@nestjs/common';
+import { CreateUserAdminUseCase } from 'src/application/use-cases/users/create-user-admin.use-case';
 import { CreateUserUseCase } from 'src/application/use-cases/users/create-user.use-case';
 import { DeleteUserUseCase } from 'src/application/use-cases/users/delete-user.use-case';
 import { GetUserUseCase } from 'src/application/use-cases/users/get-user.use-case';
@@ -23,6 +24,7 @@ import { UserController } from '../../controllers/users/user.controller';
         DeleteUserUseCase,
         GetUserUseCase,
         LoginUserUseCase,
+        CreateUserAdminUseCase,
         {
             provide: 'IUserRepository',
             useClass: UserRepository,
@@ -34,4 +36,11 @@ import { UserController } from '../../controllers/users/user.controller';
     ],
     imports: [],
 })
-export class UserModule { }
+export class UserModule implements OnModuleInit {
+    constructor(private readonly createUserAdminUseCase: CreateUserAdminUseCase) { }
+
+    // Esse método será chamado quando o módulo for iniciado
+    async onModuleInit() {
+        await this.createUserAdminUseCase.createAdminUser();
+    }
+}
