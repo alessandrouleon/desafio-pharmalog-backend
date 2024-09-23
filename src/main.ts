@@ -20,7 +20,7 @@ async function bootstrap() {
   const startServer = async () => {
     try {
       await MongoConnection();
-      const port = process.env.BACKEND_PORT;
+      const port = process.env.DOCKER_BACKEND_PORT;
 
       await app.listen(port);
       console.log(`🚀 Server running on port ${port}`);

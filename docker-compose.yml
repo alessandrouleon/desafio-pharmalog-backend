@@ -1,3 +1,31 @@
+# services:
+#   mongodb:
+#     image: mongo:latest
+#     ports:
+#       - '27017:27017'
+#     volumes:
+#       - mongo-data:/data/db
+#     networks:
+#       - mynetwork
+#   nodeapp:
+#     build: .
+#     environment:
+#       - DOCKER_PORT:4050
+#     ports:
+#       - '4050:4050'
+#     depends_on:
+#       - mongodb
+#     networks:
+#       - mynetwork
+
+# networks:
+#   mynetwork:
+#     driver: bridge
+
+# volumes:
+#   mongo-data:
+version: '3.8'  # Certifique-se de que a versão do Compose é especificada
+
 services:
   mongodb:
     image: mongo:latest
@@ -7,10 +35,12 @@ services:
       - mongo-data:/data/db
     networks:
       - mynetwork
+
   nodeapp:
     build: .
     environment:
-      - DOCKER_PORT:4050
+      - DOCKER_BACKEND_PORT=4050
+      - MONGO_URI=mongodb://mongodb:27017/pharmalog  # Apontar para o nome do serviço MongoDB
     ports:
       - '4050:4050'
     depends_on:
