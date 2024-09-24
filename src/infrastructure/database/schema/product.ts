@@ -34,7 +34,7 @@ const schema = new Schema<ProductModel>({
     },
     active: {
         type: Boolean,
-        required: true,
+        required: false,
     },
     createdAt: {
         type: Date,

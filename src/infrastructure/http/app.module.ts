@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './models/users/user.module';
 
 import { ConfigModule } from '@nestjs/config';
-import { APP_GUARD } from '@nestjs/core';
-import { AuthGuard } from 'src/application/auth/guard/auth.guard';
+// import { APP_GUARD } from '@nestjs/core';
+// import { AuthGuard } from 'src/application/auth/guard/auth.guard';
 import { AuthModule } from 'src/application/auth/model/auth.module';
 import { ProductModule } from './models/products/product.module';
 
@@ -16,10 +16,10 @@ import { ProductModule } from './models/products/product.module';
   ],
   controllers: [],
   providers: [
-    {
-      provide: APP_GUARD,
-      useClass: AuthGuard,
-    }
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: AuthGuard,
+    // }
   ],
 })
 export class AppModule { }
